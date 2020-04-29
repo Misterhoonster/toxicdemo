@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Toxicity Demo</title>
+    <meta name="description" content="Toxicity Demo">
+    <meta name="author" content="Hoon Shin">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="./styles.css" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./lib/css/emoji.css" rel="stylesheet">
+    
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">Toxicity Demo</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="btn btn-secondary" href="https://github.com/Misterhoonster/toxicdemo" target="_blank">
+                        View on GitHub <i class="fa fa-lg fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="container-fluid my_container">
+        <div class="row my_row justify-content-center">
+            <div class="col-sm-8 my_col">
+                <div class="text-left">
+                    <p class="lead emoji-picker-container">
+                        <textarea id="textbox" class="form-control textarea-control" rows="5" placeholder="Write comment here (i.e., you guys suck)" data-emojiable="true"></textarea>
+                    </p>
+                </div>
+                <button id="button" type="button" class="btn btn-outline-primary">Classify</button>
+            </div>
+            <div class="col-sm-4 my_col">
+                <div class="row my_row">
+                    39% Moderately Toxic!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- TensorFlow.js script -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+    
+    <!-- jQuery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Popper script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap script -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- main script -->
+    <script src="./main.js"></script>
+    
+    <!-- Lib scripts -->
+    <script src="./lib/js/config.js"></script>
+    <script src="./lib/js/util.js"></script>
+    <script src="./lib/js/jquery.emojiarea.js"></script>
+    <script src="./lib/js/emoji-picker.js"></script>
+</body>
+</html>
