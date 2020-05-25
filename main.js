@@ -1,6 +1,6 @@
 
-//import * as tf from '@tensorflow/tfjs';
-//model = await tf.loadLayersModel('model/model.json');
+import * as tf from '@tensorflow/tfjs';
+model = await tf.loadLayersModel('model/model.json');
 
 const url = 'https://api.npoint.io/6fa50cbaa66572bd0a81'
 
@@ -55,11 +55,11 @@ function predict(text) {
   });
   // Perform truncation and padding.
   const paddedSequence = padSequences([sequence]);
-  //const input = tf.tensor(paddedSequence, [100]);
+  const input = tf.tensor(paddedSequence, [100]);
 
-  //const prediction = model.predict(input);
+  const prediction = model.predict(input);
   
-  return paddedSequence
+  return prediction;
 }
 
 $(function() {
