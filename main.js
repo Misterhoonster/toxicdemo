@@ -1,5 +1,4 @@
-import * as tf from '@tensorflow/tfjs';
-let model = tf.loadLayersModel('model/model.json');
+//import * as tf from '@tensorflow/tfjs';
 
 const url = 'https://api.npoint.io/6fa50cbaa66572bd0a81'
 
@@ -25,14 +24,14 @@ return sequences.map(seq => {
 });
 }
 
-function predict(text) {
+async function predict(text) {
+  let model = await tf.loadGraphModel('./model/model.json');
   let emojisplit = new EmojiSplit().create();
   // Convert to lower case and remove all punctuations.
   let rawText =
       text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '');
   rawText = emojisplit.splitBySymbol(rawText);
   rawText = rawText.filter(v=>v.trim()!='');
-  console.log(rawText);
   let inputText = []
   for (let i = 0; i < rawText.length; i++) {
     let text = rawText[i].split(' ');
@@ -54,7 +53,7 @@ function predict(text) {
   });
   // Perform truncation and padding.
   const paddedSequence = padSequences([sequence]);
-  const input = tf.tensor(paddedSequence, [100]);
+  const input = tf.tensor(paddedSequence, [1, 100]);
 
   const prediction = model.predict(input);
   
