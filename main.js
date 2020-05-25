@@ -1,4 +1,4 @@
-import * as tf from '@tensorflow/tfjs@latest';
+import * as tf from '@tensorflow/tfjs';
 let model = tf.loadLayersModel('model/model.json');
 
 const url = 'https://api.npoint.io/6fa50cbaa66572bd0a81'
