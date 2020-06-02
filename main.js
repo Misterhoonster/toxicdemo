@@ -1,5 +1,3 @@
-//import * as tf from '@tensorflow/tfjs';
-
 const url = 'https://api.npoint.io/6fa50cbaa66572bd0a81'
 
 let req = new XMLHttpRequest();
@@ -25,7 +23,9 @@ return sequences.map(seq => {
 }
 
 async function predict(text) {
-  let model = await tf.loadGraphModel('./model/model.json');
+  // load keras model
+  let model = await tf.loadLayersModel('https://storage.googleapis.com/tfjs-models/tfjs/sentiment_cnn_v1/model.json');
+
   let emojisplit = new EmojiSplit().create();
   // Convert to lower case and remove all punctuations.
   let rawText =
